@@ -1,4 +1,4 @@
-package com.hibernate.employee.Emp;
+package com.hibernate.car.Car;
 
 
 /**
@@ -10,7 +10,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.hibernate.employee.Emp.Employee;
+import com.hibernate.car.Car.Car;
 
 public class App 
 {
@@ -18,15 +18,15 @@ public class App
     {
         System.out.println( "programm strated!" );
         Configuration configuration=new Configuration();
-        configuration.configure("hibernate.cfg.xml");
+        configuration.configure("carhibernate.cfg.xml");
         SessionFactory factory=configuration.buildSessionFactory();
         Session session = factory.openSession();
         Transaction tx=session.beginTransaction();
         
-        Employee obj=new Employee();
-        obj.setId(123);
-        obj.setName("darshan");
-        obj.setAge(22);
+        Car obj=new Car();
+        obj.setModel(700);
+        obj.setName("Mahindra");
+        obj.setPrice(2500000);
         
         session.save(obj);
         tx.commit();
